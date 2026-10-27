@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>RGZ SARL | Connectivité au Bénin, partenaire Celtiis</title>
+<meta name="description" content="RGZ SARL, société béninoise de distribution d'équipements de connectivité et de services numériques depuis 2016, partenaire et distributeur officiel Celtiis.">
+<meta name="theme-color" content="#1F3B73">
+<meta property="og:type" content="website">
+<meta property="og:title" content="RGZ SARL, partenaire officiel Celtiis">
+<meta property="og:description" content="Connectivité et numérique pour les foyers et les entreprises du Bénin depuis 2016.">
+<meta property="og:image" content="https://www.rgz.bj/RGZ.jpg">
+<meta property="og:url" content="https://www.rgz.bj/">
+<link rel="icon" href="RGZ.jpg">
+<link rel="apple-touch-icon" href="RGZ.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css">
+<link rel="stylesheet" href="rgz.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "RGZ SARL",
+  "description": "Distributeur officiel de la fibre Celtiis et de routeurs CPE 4G et MiFi au Bénin.",
+  "url": "https://www.rgz.bj/",
+  "logo": "https://www.rgz.bj/RGZ.jpg",
+  "telephone": "+229 01 62 00 00 62",
+  "email": "rgz@rgz.bj",
+  "foundingDate": "2016",
+  "address": {"@type": "PostalAddress", "streetAddress": "N°937 Gbégamey, 4 Étoile rouge, 03 BP 4154 Jéricho", "addressLocality": "Cotonou", "addressCountry": "BJ"},
+  "openingHoursSpecification": [
+    {"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "08:00", "closes": "18:00"},
+    {"@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "09:00", "closes": "13:00"}
+  ]
+}
+</script>
+<script>
+/* Écran de chargement : l'accueil attend qu'il disparaisse (sécurité : 4,5 s maximum) */
+document.documentElement.classList.add("is-loading");
+setTimeout(function(){ document.documentElement.classList.remove("is-loading"); }, 4500);
+</script>
+</head>
+<body>
+<div class="preloader" aria-hidden="true">
+  <div class="loader">
+    <div class="loader-circle"></div>
+    <div class="loader-circle"></div>
+    <div class="loader-circle"></div>
+    <div class="loader-circle"></div>
+    <span class="loader-name">RGZ SARL</span>
+  </div>
+</div>
+<a class="skip" href="#apropos">Aller au contenu</a>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#accueil">
+      <img src="RGZ.jpg" alt="" onerror="this.remove()"><span class="brand-name">RGZ SARL</span>
+    </a>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="nav" aria-label="Ouvrir le menu"><span></span><span></span><span></span></button>
+    <nav class="nav" id="nav" aria-label="Navigation principale">
+      <a href="#accueil" class="active">Accueil</a>
+      <a href="#apropos">À propos</a>
+      <a href="#partenaires">Partenaires</a>
+      <a href="#recrutement">Recrutement</a>
+      <a href="#contact">Contact</a>
+      <a class="btn btn-red" href="offres.html">Nos offres Celtiis</a>
+    </nav>
+    <div class="nav-backdrop" aria-hidden="true"></div>
+  </div>
+</header>
+
+<main id="accueil">
+
+<!-- Accueil : fibres lumineuses à la place de la vidéo -->
+<section class="hero on-dark" aria-labelledby="titre">
+  <svg class="fibres" viewBox="0 0 1200 600" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+    <g class="base">
+      <path d="M-50 520 C 250 520, 380 330, 620 300 S 1000 120, 1260 90" stroke="#E3141F"/>
+      <path d="M-50 560 C 300 560, 420 380, 640 330 S 1050 220, 1260 200" stroke="#E3141F"/>
+      <path d="M-50 80 C 260 90, 420 260, 620 300 S 980 470, 1260 500" stroke="#8DC21F"/>
+      <path d="M-50 140 C 300 160, 440 300, 640 330 S 1000 540, 1260 560" stroke="#FFFFFF"/>
+    </g>
+    <path class="pulse" d="M-50 520 C 250 520, 380 330, 620 300 S 1000 120, 1260 90" stroke="#E3141F"/>
+    <path class="pulse d2" d="M-50 560 C 300 560, 420 380, 640 330 S 1050 220, 1260 200" stroke="#FF5A63"/>
+    <path class="pulse d3" d="M-50 80 C 260 90, 420 260, 620 300 S 980 470, 1260 500" stroke="#8DC21F"/>
+    <path class="pulse d4" d="M-50 140 C 300 160, 440 300, 640 330 S 1000 540, 1260 560" stroke="#FFFFFF"/>
+  </svg>
+  <div class="wrap">
+    <div>
+      <span class="badge"><i></i> Partenaire et distributeur officiel Celtiis</span>
+      <h1 id="titre">Connecter les foyers et les entreprises <span>du Bénin</span></h1>
+      <p class="lead">Depuis 2016, RGZ SARL distribue des équipements de connectivité et accompagne les PME dans leur transformation numérique. Avec Celtiis, nous apportons la fibre jusqu'à votre porte.</p>
+      <div class="hero-actions">
+        <a class="btn btn-red" href="offres.html">Découvrir nos offres
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a class="btn btn-ghost-light" href="#apropos">Qui sommes-nous</a>
+      </div>
+    </div>
+
+    <div class="duo-card">
+      <div class="rgz-head">
+        <img src="RGZ.jpg" alt="Logo RGZ SARL">
+        <div><h2>RGZ SARL</h2><p>Connectivité et numérique, à Cotonou depuis 2016</p></div>
+      </div>
+      <ul class="rgz-list">
+        <li><strong>Distribution d'équipements</strong>Routeurs CPE 4G, MiFi et appareils à large bande, au détail et en gros.</li>
+        <li><strong>Services numériques pour les PME</strong>Nous connectons les entreprises à leurs outils et à leurs données.</li>
+        <li><strong>Conseil de proximité</strong>Des agents sur le terrain, quartier par quartier, du conseil jusqu'au suivi.</li>
+      </ul>
+      <div class="rgz-stats">
+        <div><strong data-count="2016">2016</strong>Année de création</div>
+        <div><strong>Gbégamey</strong>Bureau à Cotonou</div>
+        <div><strong>Foyers &amp; PME</strong>Nos clients</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- À propos : histoire, mission et dates conservées -->
+<section id="apropos" aria-labelledby="titre-about">
+  <div class="wrap">
+    <div class="about-grid">
+      <div>
+        <span class="eyebrow">Notre histoire</span>
+        <h2 id="titre-about">L'innovation au service de la connectivité</h2>
+        <p>Fondée en 2016, RGZ SARL est une société de distribution au détail et en gros d'appareils de connectivité à large bande. Elle fournit aussi des services de numérisation aux PME. Aujourd'hui, RGZ est distributeur officiel Celtiis : nous vendons la fibre Celtiis, ainsi que des routeurs CPE 4G et des MiFi AfriLink.</p>
+        <div class="mission">
+          <h3>Notre mission</h3>
+          <p>Permettre la connectivité et la numérisation. Connecter les PME à leurs actifs via des appareils et des services numériques. Connecter les entreprises et les foyers béninois avec des solutions Internet accessibles, tout en participant à la transformation numérique du pays.</p>
+        </div>
+        <div class="pillars">
+          <div><h4>Conseil de proximité</h4><p>Des agents commerciaux sur le terrain, quartier par quartier.</p></div>
+          <div><h4>Suivi de votre demande</h4><p>De la vérification de votre adresse jusqu'à l'installation par Celtiis.</p></div>
+        </div>
+      </div>
+      <figure class="photo">
+        <img src="Equipe.jpg" alt="L'équipe RGZ SARL" width="640" height="480" loading="lazy" onerror="this.closest('figure').remove()">
+        <div class="since"><small>Depuis</small><strong data-count="2016">2016</strong></div>
+      </figure>
+    </div>
+
+    <ol class="timeline" aria-label="Les dates clés de RGZ SARL">
+      <li><span class="year">2016</span><h4>Création de RGZ SARL</h4><p>Lancement de l'activité de distribution d'équipements de connectivité à Cotonou.</p></li>
+      <li><span class="year">2023</span><h4>Évaluation du plan de déploiement</h4><p>Évaluation de l'infrastructure disponible et définition d'un plan de déploiement.</p></li>
+      <li><span class="year">2024</span><h4>Déploiement</h4><p>Mise en œuvre du plan de déploiement, en mettant l'accent sur les zones prioritaires identifiées.</p></li>
+      <li><span class="year">2025</span><h4>Lancement du renforcement de l'expérience client</h4><p>Mise en œuvre d'initiatives pour améliorer l'expérience client : meilleur support client, personnalisation des offres et automatisation des processus.</p></li>
+    </ol>
+  </div>
+</section>
+
+<!-- Partenaires -->
+<section class="band-white" id="partenaires" aria-labelledby="titre-part">
+  <div class="wrap">
+    <span class="eyebrow">Ils nous font confiance</span>
+    <h2 id="titre-part">Nos partenaires</h2>
+    <p class="intro">Opérateurs et fabricants avec qui nous travaillons au quotidien.</p>
+
+    <div class="feature-partner">
+      <img src="Celtiis.jpg" alt="Logo Celtiis">
+      <div>
+        <h3>Celtiis, notre partenaire fibre</h3>
+        <p>RGZ SARL est partenaire et distributeur officiel de Celtiis. Nos conseillers commercialisent la fibre Celtiis Maison et Entreprise et accompagnent chaque client jusqu'à l'installation.</p>
+      </div>
+      <a class="btn btn-lime" href="offres.html">Voir les offres</a>
+    </div>
+
+    <div class="logos">
+      <div><img src="mtn-logo.png" alt="MTN" loading="lazy"></div>
+      <div><img src="moov.png" alt="Moov" loading="lazy"></div>
+      <div><img src="ZTE_logo.svg.png" alt="ZTE" loading="lazy"></div>
+      <div><img src="mobilewire.png" alt="Mobilewire" loading="lazy"></div>
+      <div><img src="MEIG.avif" alt="MEIG" loading="lazy"></div>
+      <div><img src="Tozed.png" alt="Tozed" loading="lazy"></div>
+      <div><img src="innovasas.png" alt="Innovasas" loading="lazy"></div>
+      <div><img src="Celtiis.jpg" alt="Celtiis" loading="lazy" style="max-height:64px;border-radius:8px"></div>
+    </div>
+
+    <div class="quotes">
+      <blockquote>
+        <p>« Nous sommes très satisfaits de notre collaboration et de la mise en œuvre de nos différents projets ! »</p>
+        <footer><span class="avatar"><img src="mtn-logo.png" alt="" loading="lazy"></span><span><strong>MTN</strong>Partenaire, Cotonou</span></footer>
+      </blockquote>
+      <blockquote>
+        <p>« Notre partenariat avec RGZ a permis de développer notre présence stratégique sur le marché africain ! »</p>
+        <footer><span class="avatar"><span class="initials">DT</span></span><span><strong>DATA Technologie</strong>Partenaire, Cotonou</span></footer>
+      </blockquote>
+      <blockquote>
+        <p>« Le service était très réactif, l'expertise certaine et la solution adéquate. Merci à toute l'équipe ! »</p>
+        <footer><span class="avatar"><img src="ZTE_logo.svg.png" alt="" loading="lazy"></span><span><strong>ZTE</strong>Partenaire, Cotonou</span></footer>
+      </blockquote>
+      <blockquote>
+        <p>« RGZ est l'un de nos meilleurs partenaires en Afrique de l'Ouest, une entreprise très dynamique ! »</p>
+        <footer><span class="avatar"><img src="moov.png" alt="" loading="lazy"></span><span><strong>Moov</strong>Partenaire, Cotonou</span></footer>
+      </blockquote>
+    </div>
+    <div class="quotes-cta">
+      <p>Vous souhaitez partager votre expérience avec RGZ ?</p>
+      <a class="btn btn-ghost" href="avis.html">Laisser un avis</a>
+    </div>
+  </div>
+</section>
+
+<!-- Bouton vers la page des offres -->
+<section class="to-offers on-dark" aria-label="Accès aux offres">
+  <div class="wrap">
+    <div class="side">
+      <span class="eyebrow">Particuliers et entreprises</span>
+      <h2>Vous voulez la fibre Celtiis ?</h2>
+      <p>Offres Maison et Entreprise, routeurs 4G et MiFi, test de votre quartier : tout est sur notre page dédiée.</p>
+      <a class="btn btn-ghost-light" href="offres.html#eligibilite">Tester mon quartier</a>
+    </div>
+    <div class="side">
+      <span class="eyebrow">À partir de 14 900 FCFA par mois</span>
+      <h2>Comparez les offres</h2>
+      <p>Prix, débits, installation et étapes de souscription avec un conseiller RGZ.</p>
+      <a class="btn btn-lime" href="offres.html">Découvrir nos offres
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    </div>
+  </div>
+</section>
+
+<!-- Recrutement -->
+<section class="jobs" id="recrutement" aria-labelledby="titre-jobs">
+  <div class="wrap">
+    <div>
+      <h2 id="titre-jobs">Nous recrutons</h2>
+      <p>Nous cherchons des commerciaux terrain pour la fibre Maison et Entreprise, avec une rémunération fixe et variable. Nous accueillons aussi un stagiaire en marketing et communication digitale.</p>
+    </div>
+    <div><a class="btn btn-red" href="https://wa.me/2290162000062?text=Bonjour%2C%20je%20souhaite%20postuler%20chez%20RGZ%20SARL." target="_blank" rel="noopener">Postuler sur WhatsApp</a></div>
+  </div>
+</section>
+
+<!-- Contact -->
+<section id="contact" aria-labelledby="titre-contact">
+  <div class="wrap">
+    <span class="eyebrow">Contactez-nous</span>
+    <h2 id="titre-contact">Nous joindre</h2>
+    <p class="intro">Lundi au vendredi de 8 h à 18 h, samedi de 9 h à 13 h.</p>
+    <div class="contact-grid">
+      <div>
+        <h3>Service commercial</h3>
+        <a class="c-item" href="tel:+2290162000062"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg></span><span><small>Téléphone</small>01 62 00 00 62</span></a>
+        <a class="c-item" href="mailto:rgz@rgz.bj"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></svg></span><span><small>E-mail</small>rgz@rgz.bj</span></a>
+      </div>
+      <div>
+        <h3>Assistance clients</h3>
+        <a class="c-item" href="https://wa.me/2290162000062" target="_blank" rel="noopener"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 21l1.7-4.6A9 9 0 1 1 8 19.6L3 21z"/><path d="M9 9.5c0 3 2.5 5.5 5.5 5.5l1-1.5-2-1-1 .8a4 4 0 0 1-2-2l.8-1-1-2L9 9.5z"/></svg></span><span><small>WhatsApp</small>Écrire sur WhatsApp</span></a>
+        <div class="c-item"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></span><span><small>Horaires</small>Lun-ven 8 h-18 h, sam 9 h-13 h</span></div>
+      </div>
+      <div>
+        <h3>Bureau</h3>
+        <div class="c-item"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg></span><span><small>Adresse</small>N°937 Gbégamey, 4 Étoile rouge<br>03 BP 4154 Jéricho, Cotonou</span></div>
+        <div class="c-item"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></span><span><small>Visite</small>Sur rendez-vous</span></div>
+      </div>
+    </div>
+    <div id="map" role="img" aria-label="Carte : bureau de RGZ SARL à Gbégamey, Cotonou"></div>
+  </div>
+</section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <h3>RGZ SARL</h3>
+        <p>Partenaire et distributeur officiel Celtiis au Bénin : fibre Maison et Entreprise, routeurs CPE 4G et MiFi AfriLink, pour particuliers et professionnels.</p>
+      </div>
+      <div>
+        <h3>L'entreprise</h3>
+        <ul>
+          <li><a href="#apropos">À propos</a></li>
+          <li><a href="#partenaires">Partenaires</a></li>
+          <li><a href="#recrutement">Recrutement</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Nos offres</h3>
+        <ul>
+          <li><a href="offres.html#offres">Fibre Maison</a></li>
+          <li><a href="offres.html#offres">Fibre Entreprise</a></li>
+          <li><a href="offres.html#offres">Routeurs CPE et MiFi 4G</a></li>
+          <li><a href="offres.html#eligibilite">Tester mon quartier</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© <span id="annee">2026</span> RGZ SARL, partenaire officiel Celtiis. Cotonou, Bénin.</span>
+      <span class="foot-links"><a href="#confidentialite">Confidentialité et données</a><a href="https://web.facebook.com/rgz.connectivity" target="_blank" rel="noopener">Facebook</a></span>
+    </div>
+  </div>
+</footer>
+
+<dialog class="privacy-modal" id="confidentialite" aria-labelledby="titre-conf">
+  <button class="privacy-close" type="button" aria-label="Fermer" data-close-privacy>×</button>
+  <span class="eyebrow">Confidentialité</span>
+  <h2 id="titre-conf">Confidentialité et données</h2>
+  <h3>Les informations collectées</h3>
+  <p>Les informations saisies dans le formulaire (nom, téléphone, commune, quartier, usage) sont transmises à RGZ SARL par WhatsApp. Le site ne les stocke pas.</p>
+  <h3>À quoi elles servent</h3>
+  <p>Elles servent uniquement à vérifier votre éligibilité et à vous recontacter. Nous ne les vendons pas et ne les transmettons qu'à Celtiis, lorsque vous souscrivez.</p>
+  <h3>Vos droits</h3>
+  <p>Pour les faire supprimer, écrivez à <a href="mailto:rgz@rgz.bj">rgz@rgz.bj</a>.</p>
+  <button class="btn btn-blue" type="button" data-close-privacy>J'ai compris</button>
+</dialog>
+
+<a class="btn btn-wa wa" href="https://wa.me/2290162000062?text=Bonjour%20RGZ%2C%20je%20voudrais%20des%20informations." target="_blank" rel="noopener" aria-label="Nous écrire sur WhatsApp"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.26-.46-2.39-1.47-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.14.3-.35.45-.52.15-.18.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.61-.92-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.07c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.7.63.71.22 1.36.19 1.87.12.57-.09 1.76-.72 2-1.41.25-.7.25-1.29.18-1.41-.08-.13-.28-.2-.57-.35m-5.42 7.4h-.01a9.87 9.87 0 0 1-5.03-1.38l-.36-.21-3.74.98 1-3.65-.24-.37a9.86 9.86 0 0 1-1.51-5.26c0-5.45 4.44-9.88 9.89-9.88 2.64 0 5.12 1.03 6.99 2.9a9.83 9.83 0 0 1 2.89 7c0 5.45-4.44 9.88-9.88 9.88m8.41-18.3A11.82 11.82 0 0 0 12.05 0C5.5 0 .16 5.34.16 11.89c0 2.1.55 4.14 1.59 5.95L.06 24l6.3-1.65a11.88 11.88 0 0 0 5.68 1.45h.01c6.55 0 11.89-5.34 11.89-11.89a11.82 11.82 0 0 0-3.48-8.42z"/></svg></a>
+
+<script>
+(function(){
+  document.getElementById("annee").textContent = new Date().getFullYear();
+
+  // Menu mobile
+  var btn = document.querySelector(".menu-btn"), nav = document.getElementById("nav");
+  function setMenu(open){ nav.classList.toggle("open", open); document.body.classList.toggle("menu-open", open); btn.classList.toggle("open", open); btn.setAttribute("aria-expanded", String(open)); btn.setAttribute("aria-label", open ? "Fermer le menu" : "Ouvrir le menu"); }
+  btn.addEventListener("click", function(){ setMenu(!nav.classList.contains("open")); });
+  nav.querySelectorAll("a").forEach(function(a){ a.addEventListener("click", function(){ setMenu(false); }); });
+  document.addEventListener("keydown", function(e){ if(e.key === "Escape") setMenu(false); });
+  document.querySelector(".nav-backdrop").addEventListener("click", function(){ setMenu(false); });
+
+  // Lien actif dans le menu
+  var links = nav.querySelectorAll('a[href^="#"]');
+  function highlight(){
+    var current = "accueil";
+    document.querySelectorAll("main section[id]").forEach(function(s){
+      if (window.scrollY >= s.offsetTop - 120) current = s.id;
+    });
+    links.forEach(function(l){ l.classList.toggle("active", l.getAttribute("href") === "#" + current); });
+  }
+  window.addEventListener("scroll", highlight, {passive:true});
+
+  // Carte
+  window.rgzInitMap = function(){
+    if (typeof L === "undefined") return;
+    var pos = [6.3698483, 2.4113857];
+    var map = L.map("map", {scrollWheelZoom:false}).setView(pos, 15);
+    L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>', maxZoom: 18
+    }).addTo(map);
+    L.marker(pos, {icon: L.icon({iconUrl:"RGZ.jpg", iconSize:[40,40], iconAnchor:[20,40], popupAnchor:[0,-40]})})
+      .addTo(map).bindPopup("<strong>RGZ SARL</strong><br>N°937 Gbégamey, 4 Étoile rouge<br>Cotonou, Bénin").openPopup();
+  };
+
+  // Fenêtre « Confidentialité et données »
+  var privacy = document.getElementById("confidentialite");
+  function openPrivacy(e){
+    e.preventDefault();
+    if (privacy.showModal) privacy.showModal(); else privacy.setAttribute("open", "");
+  }
+  document.querySelectorAll('a[href="#confidentialite"]').forEach(function(a){ a.addEventListener("click", openPrivacy); });
+  document.querySelectorAll("[data-close-privacy]").forEach(function(b){ b.addEventListener("click", function(){ privacy.close ? privacy.close() : privacy.removeAttribute("open"); }); });
+  privacy.addEventListener("click", function(e){ if (e.target === privacy) privacy.close(); });   // clic en dehors
+})();
+</script>
+<script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js" async onload="rgzInitMap()"></script>
+<script src="rgz.js" defer></script>
+</body>
+</html>

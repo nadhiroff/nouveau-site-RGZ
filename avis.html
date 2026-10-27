@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Laisser un avis - RGZ SARL</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --primary:#ec1928;
+      --primary-dark:#c01520;
+      --bg:#f7f8fa;
+      --text:#222;
+      --muted:#666;
+      --border:#e5e7eb;
+      --star:#f5b50a;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--bg);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial,sans-serif;color:var(--text)}
+    .container{max-width:880px;margin:0 auto;padding:24px}
+    .header{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:16px}
+    .brand{display:flex;align-items:center;gap:10px;font-weight:700}
+    .brand span{color:var(--primary)}
+    .back{color:var(--primary);text-decoration:none;font-size:14px;font-weight:600;position:relative}
+    .back::after{content:'';position:absolute;left:0;bottom:-2px;width:0;height:2px;background:var(--primary);transition:width .2s ease}
+    .back:hover{color:var(--primary-dark)}
+    .back:hover::after{width:100%}
+    .card{background:#fff;border:1px solid var(--border);border-radius:12px;box-shadow:0 10px 20px rgba(0,0,0,.04);overflow:hidden}
+    .card-header{padding:18px 20px;background:linear-gradient(135deg,#2c3e50,var(--primary));color:#fff;display:flex;align-items:center;justify-content:space-between}
+    .card-body{padding:20px}
+    .row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+    @media(max-width:768px){.row{grid-template-columns:1fr}}
+    label{display:block;margin:8px 0 6px;font-weight:600}
+    input[type="text"],input[type="email"],textarea{width:100%;padding:12px 12px;border:1px solid var(--border);border-radius:8px;font:inherit}
+    textarea{min-height:130px;resize:vertical}
+    .rating{display:flex;gap:8px;font-size:26px;cursor:pointer;user-select:none}
+    .rating span{color:#ccc;transition:color .15s ease}
+    .rating span.active{color:var(--star)}
+    .consent{display:flex;gap:10px;align-items:flex-start;margin-top:10px}
+    .actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+    .btn{appearance:none;border:none;background:var(--primary);color:#fff;padding:10px 16px;border-radius:8px;cursor:pointer;font-weight:600;text-decoration:none;display:inline-block;transition:transform .12s ease, box-shadow .12s ease}
+    .btn:hover{background:var(--primary-dark)}
+    .btn:active{transform:translateY(1px);box-shadow:none}
+    .btn-secondary{background:#fff;color:var(--primary);border:2px solid var(--primary)}
+    .btn-secondary:hover{background:var(--primary);color:#fff}
+    .status{color:var(--muted);min-height:20px;margin-top:6px;font-size:14px}
+    .notice{background:#fff;border:1px dashed var(--border);padding:12px;border-radius:8px;color:var(--muted);font-size:14px;margin-bottom:14px}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <a href="index.html#partenaires" class="back">← Retour</a>
+      <div class="brand">RGZ <span>SARL</span></div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <strong>Laisser un avis</strong>
+        <span style="opacity:.9;font-size:14px">Votre retour nous aide à nous améliorer</span>
+      </div>
+      <div class="card-body">
+        <div class="notice">
+          Votre avis pourra être publié (prénom/ville uniquement) si vous cochez la case de consentement. Vous pouvez en demander le retrait à tout moment.
+        </div>
+        <form id="reviewForm" novalidate
+              >
+          <div class="row">
+            <div>
+              <label for="reviewName">Nom complet</label>
+              <input id="reviewName" type="text" placeholder="Votre nom" required />
+            </div>
+            <div>
+              <label for="reviewEmail">Email (optionnel)</label>
+              <input id="reviewEmail" type="email" placeholder="Votre email (pour un suivi)" />
+            </div>
+          </div>
+
+          <div style="margin-top:10px">
+            <label>Votre note</label>
+            <div id="reviewRating" class="rating" aria-label="Note sur 5">
+              <span data-value="1">★</span>
+              <span data-value="2">★</span>
+              <span data-value="3">★</span>
+              <span data-value="4">★</span>
+              <span data-value="5">★</span>
+            </div>
+            <input type="hidden" id="ratingValue" value="0" />
+          </div>
+
+          <div style="margin-top:10px">
+            <label for="reviewMessage">Votre avis</label>
+            <textarea id="reviewMessage" placeholder="Décrivez votre expérience..." required></textarea>
+          </div>
+
+          <div class="consent">
+            <input type="checkbox" id="reviewConsent" />
+            <label for="reviewConsent">J'autorise RGZ SARL à publier mon avis (prénom/ville uniquement). Je peux demander le retrait à tout moment.</label>
+          </div>
+
+          <div class="status" id="reviewStatus" aria-live="polite"></div>
+
+          <div class="actions">
+            <button type="button" class="btn" id="reviewSubmit">Envoyer l'avis</button>
+            <a href="index.html#partenaires" class="btn btn-secondary">Annuler</a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Stars interaction
+    (function(){
+      const ratingEl = document.getElementById('reviewRating');
+      const ratingHidden = document.getElementById('ratingValue');
+      if (!ratingEl) return;
+      const stars = Array.from(ratingEl.querySelectorAll('span'));
+      const paint = (val)=>{
+        stars.forEach(s=>{ s.classList.toggle('active', Number(s.dataset.value) <= val); });
+      };
+      stars.forEach(s=>{
+        s.addEventListener('mouseenter', ()=>paint(Number(s.dataset.value)));
+        s.addEventListener('mouseleave', ()=>paint(Number(ratingHidden.value)));
+        s.addEventListener('click', ()=>{
+          const v = Number(s.dataset.value)||0; ratingHidden.value = String(v); paint(v);
+        });
+      });
+    })();
+
+    // Simple validation helper
+    function validateEmail(v){ return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v); }
+
+    // Envoi de l'avis par WhatsApp (aucun e-mail)
+    (function(){
+      const submitBtn = document.getElementById('reviewSubmit');
+      const statusEl = document.getElementById('reviewStatus');
+      const ratingHidden = document.getElementById('ratingValue');
+      const WA = '2290162000062';
+      function setStatus(msg){ if(statusEl) statusEl.textContent = msg || ''; }
+
+      submitBtn.addEventListener('click', () => {
+        const name = document.getElementById('reviewName').value.trim();
+        const email = document.getElementById('reviewEmail').value.trim();
+        const message = document.getElementById('reviewMessage').value.trim();
+        const consent = document.getElementById('reviewConsent').checked;
+        const rating = Number(ratingHidden.value || '0');
+
+        if (!name) { setStatus('Veuillez renseigner votre nom.'); return; }
+        if (!message) { setStatus('Veuillez écrire votre avis.'); return; }
+        if (email && !validateEmail(email)) { setStatus('Adresse e-mail invalide.'); return; }
+        if (rating <= 0) { setStatus('Veuillez sélectionner une note.'); return; }
+
+        const text = 'Avis client RGZ SARL\n\n' +
+          '*Nom :* ' + name + '\n' +
+          (email ? '*E-mail :* ' + email + '\n' : '') +
+          '*Note :* ' + rating + '/5\n' +
+          '*Publication autorisée (prénom/ville) :* ' + (consent ? 'Oui' : 'Non (avis interne uniquement)') + '\n\n' +
+          '*Avis :*\n' + message;
+        const url = 'https://wa.me/' + WA + '?text=' + encodeURIComponent(text);
+        const w = window.open(url, '_blank');
+        if (!w) window.location.href = url;
+        setStatus("WhatsApp s'ouvre avec votre avis déjà rédigé. Il vous reste à appuyer sur Envoyer.");
+      });
+    })();
+  </script>
+</body>
+</html>

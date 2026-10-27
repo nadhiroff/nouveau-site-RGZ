@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Fibre Celtiis à Cotonou et environs | Offres RGZ SARL, distributeur officiel</title>
+<meta name="description" content="RGZ SARL, distributeur officiel Celtiis au Bénin. Vérifiez si votre quartier est raccordable, comparez les offres Fibre Maison, Fibre Entreprise et routeurs 4G, puis souscrivez avec un conseiller RGZ.">
+<meta name="theme-color" content="#1F3B73">
+<meta property="og:type" content="website">
+<meta property="og:title" content="RGZ SARL, distributeur officiel Celtiis">
+<meta property="og:description" content="Vérifiez votre quartier, choisissez votre offre, un conseiller RGZ s'occupe de votre abonnement.">
+<meta property="og:image" content="https://www.rgz.bj/RGZ.jpg">
+<meta property="og:url" content="https://www.rgz.bj/offres.html">
+<link rel="icon" href="RGZ.jpg">
+<link rel="apple-touch-icon" href="RGZ.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="rgz.css">
+<script>
+/* Écran de chargement : l'accueil attend qu'il disparaisse (sécurité : 4,5 s maximum) */
+document.documentElement.classList.add("is-loading");
+setTimeout(function(){ document.documentElement.classList.remove("is-loading"); }, 4500);
+</script>
+</head>
+<body>
+<div class="preloader" aria-hidden="true">
+  <div class="loader">
+    <div class="loader-circle"></div>
+    <div class="loader-circle"></div>
+    <div class="loader-circle"></div>
+    <div class="loader-circle"></div>
+    <span class="loader-name">RGZ SARL</span>
+  </div>
+</div>
+<a class="skip" href="#eligibilite">Aller au formulaire</a>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="index.html">
+      <img src="RGZ.jpg" alt="" onerror="this.remove()"><span class="brand-name">RGZ SARL</span>
+    </a>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="nav" aria-label="Ouvrir le menu"><span></span><span></span><span></span></button>
+    <nav class="nav" id="nav" aria-label="Navigation principale">
+      <a href="index.html">← L'entreprise</a>
+      <a href="#offres">Offres</a>
+      <a href="#installation">Étapes</a>
+      <a href="#faq">Questions</a>
+      <a href="#contact">Contact</a>
+      <a class="btn btn-red" href="#eligibilite" data-scroll-form>Tester mon quartier</a>
+    </nav>
+    <div class="nav-backdrop" aria-hidden="true"></div>
+  </div>
+</header>
+
+<main>
+
+<!-- Accueil des offres + éligibilité -->
+<section class="hero on-dark" aria-labelledby="titre">
+  <svg class="fibres" viewBox="0 0 1200 600" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+    <g class="base">
+      <path d="M-50 520 C 250 520, 380 330, 620 300 S 1000 120, 1260 90" stroke="#E3141F"/>
+      <path d="M-50 80 C 260 90, 420 260, 620 300 S 980 470, 1260 500" stroke="#8DC21F"/>
+      <path d="M-50 140 C 300 160, 440 300, 640 330 S 1000 540, 1260 560" stroke="#FFFFFF"/>
+    </g>
+    <path class="pulse" d="M-50 520 C 250 520, 380 330, 620 300 S 1000 120, 1260 90" stroke="#E3141F"/>
+    <path class="pulse d3" d="M-50 80 C 260 90, 420 260, 620 300 S 980 470, 1260 500" stroke="#8DC21F"/>
+    <path class="pulse d4" d="M-50 140 C 300 160, 440 300, 640 330 S 1000 540, 1260 560" stroke="#FFFFFF"/>
+  </svg>
+  <div class="wrap" style="align-items:start">
+    <div>
+      <span class="badge"><i></i> Distributeur officiel Celtiis</span>
+      <h1 id="titre">Prenez la fibre Celtiis <span>avec un conseiller RGZ</span></h1>
+      <p class="lead">RGZ SARL, distributeur officiel Celtiis, vérifie si votre quartier est raccordable, monte votre dossier d'abonnement et suit votre demande jusqu'au passage du technicien Celtiis.</p>
+      <ul class="facts">
+        <li>Offres Fibre Maison à partir de 14 900 FCFA par mois</li>
+        <li>Installation par Celtiis, en général sous 3 à 5 jours ouvrables dans les zones raccordées</li>
+        <li>Routeurs CPE 4G et MiFi AfriLink, compatibles Celtiis, Moov et MTN</li>
+        <li>Paiement par Mobile Money MTN, Moov ou Celtiis</li>
+      </ul>
+      <div class="hero-actions">
+        <a class="btn btn-red" href="#offres">Nos offres</a>
+        <a class="btn btn-ghost-light" href="#contact">Contact commercial</a>
+      </div>
+    </div>
+
+    <form class="check" id="eligibilite" novalidate aria-labelledby="titre-check">
+      <h2 id="titre-check">Votre quartier est-il raccordable ?</h2>
+      <p class="hint">Laissez vos coordonnées. Un conseiller vérifie la couverture de votre rue et vous répond sur WhatsApp.</p>
+
+      <div class="chosen" id="chosen" role="status">
+        <span>Offre choisie : <strong id="chosenName"></strong></span>
+        <button type="button" id="chosenClear">Retirer</button>
+      </div>
+
+      <div class="field">
+        <label for="nom">Nom et prénom <span class="req" aria-hidden="true">*</span></label>
+        <input id="nom" name="nom" autocomplete="name" required aria-describedby="err-nom">
+        <span class="err" id="err-nom"></span>
+      </div>
+      <div class="field">
+        <label for="tel">Numéro de téléphone <span class="req" aria-hidden="true">*</span></label>
+        <input id="tel" name="tel" type="tel" inputmode="tel" autocomplete="tel" placeholder="01 XX XX XX XX" required aria-describedby="err-tel">
+        <span class="err" id="err-tel"></span>
+      </div>
+      <div class="row2">
+        <div class="field">
+          <label for="commune">Commune</label>
+          <select id="commune" name="commune">
+            <option>Cotonou</option>
+            <option>Abomey-Calavi</option>
+            <option>Porto-Novo</option>
+            <option>Sèmè-Podji</option>
+            <option>Ouidah</option>
+            <option>Autre commune</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="quartier">Quartier <span class="req" aria-hidden="true">*</span></label>
+          <input id="quartier" name="quartier" list="quartiers" placeholder="Ex. Fidjrossè" autocomplete="off" required aria-describedby="err-quartier">
+          <datalist id="quartiers">
+            <option value="Gbégamey"><option value="Fidjrossè"><option value="Akpakpa"><option value="Cadjèhoun"><option value="Agla"><option value="Zogbo"><option value="Godomey"><option value="Akogbato"><option value="Haie Vive"><option value="Ganhi">
+          </datalist>
+          <span class="err" id="err-quartier"></span>
+        </div>
+      </div>
+      <div class="field">
+        <label for="besoin">Pour quel usage ?</label>
+        <select id="besoin" name="besoin">
+          <option value="maison">Fibre pour la maison</option>
+          <option value="entreprise">Fibre pour mon entreprise</option>
+          <option value="routeur">Routeur CPE ou MiFi 4G</option>
+        </select>
+      </div>
+      <button class="btn btn-wa" type="submit">Envoyer ma demande sur WhatsApp</button>
+      <p class="small">Vos informations servent uniquement à vous recontacter. <a href="#confidentialite">En savoir plus</a></p>
+      <div class="done" id="done" role="status">WhatsApp s'ouvre avec votre demande déjà rédigée. Il vous reste à appuyer sur Envoyer. Si rien ne s'ouvre, appelez le <a href="tel:+2290162000062">01 62 00 00 62</a>.</div>
+    </form>
+  </div>
+</section>
+
+<!-- Solutions + grille des offres -->
+<section id="offres" aria-labelledby="titre-offres">
+  <div class="wrap">
+    <span class="eyebrow">Nos solutions</span>
+    <h2>Ce que nous vous proposons</h2>
+    <p class="intro">Fibre Celtiis pour la maison et l'entreprise, et équipements 4G là où la fibre n'arrive pas encore.</p>
+
+    <div class="services">
+      <article class="service">
+        <img src="fibre-optique.jpg" alt="" width="400" height="200" loading="lazy">
+        <div><h3>Fibre Maison</h3><p>La fibre Celtiis pour votre foyer, de 20 à 70 Mbps, avec appels gratuits vers les fixes et des mobiles Celtiis.</p><a href="#offres-grille" data-open-tab="t-maison">Voir les offres →</a></div>
+      </article>
+      <article class="service">
+        <img src="solution.avif" alt="" width="400" height="200" loading="lazy">
+        <div><h3>Fibre Entreprise</h3><p>De 25 à 200 Mbps, avec téléphonie fixe et connexion de secours, ou un devis pour un besoin plus important.</p><a href="#offres-grille" data-open-tab="t-pro">Voir les offres →</a></div>
+      </article>
+      <article class="service">
+        <img src="5G.jpg" alt="" width="400" height="200" loading="lazy">
+        <div><h3>Routeurs 4G et MiFi</h3><p>Pour les zones que la fibre n'atteint pas encore, ou en secours. Compatibles Celtiis, Moov et MTN.</p><a href="#offres-grille" data-open-tab="t-4g">Voir les offres →</a></div>
+      </article>
+    </div>
+
+    <h2 id="titre-offres">Les offres</h2>
+    <p class="intro">Les prix sont mensuels. L'installation coûte 10 000 FCFA, une seule fois.</p>
+
+    <div id="offres-grille" class="tabs" role="tablist" aria-label="Type d'offre">
+      <button class="tab" role="tab" aria-selected="true" aria-controls="p-maison" id="t-maison">Maison</button>
+      <button class="tab" role="tab" aria-selected="false" aria-controls="p-pro" id="t-pro" tabindex="-1">Entreprise</button>
+      <button class="tab" role="tab" aria-selected="false" aria-controls="p-4g" id="t-4g" tabindex="-1">Routeurs CPE et MiFi</button>
+    </div>
+
+    <div class="plans" role="tabpanel" id="p-maison" aria-labelledby="t-maison">
+      <div class="plan">
+        <div class="speed">20 Mbps<small>Home 20</small></div>
+        <div><h3>Essentiel</h3><ul><li>Appels gratuits vers les fixes et 1 mobile Celtiis</li><li>Assistance de 8 h à 20 h</li></ul></div>
+        <div class="price"><div><strong>14 900 FCFA</strong><span>par mois</span></div><a class="btn btn-ghost" href="#eligibilite" data-offre="Maison Essentiel 20 Mbps" data-usage="maison">Choisir</a></div>
+      </div>
+      <div class="plan pick">
+        <div class="speed">50 Mbps<small>Home 50</small></div>
+        <div><h3>Confort <span class="tag">Le plus demandé</span></h3><ul><li>Appels gratuits vers les fixes et 2 mobiles Celtiis</li><li>Routeur Wi-Fi inclus</li></ul></div>
+        <div class="price"><div><strong>24 900 FCFA</strong><span>par mois</span></div><a class="btn btn-red" href="#eligibilite" data-offre="Maison Confort 50 Mbps" data-usage="maison">Choisir</a></div>
+      </div>
+      <div class="plan">
+        <div class="speed">70 Mbps<small>Home 70</small></div>
+        <div><h3>Premium</h3><ul><li>Appels gratuits vers les fixes et 2 mobiles Celtiis</li><li>Pour les foyers qui regardent, téléchargent et travaillent en même temps</li></ul></div>
+        <div class="price"><div><strong>39 900 FCFA</strong><span>par mois</span></div><a class="btn btn-ghost" href="#eligibilite" data-offre="Maison Premium 70 Mbps" data-usage="maison">Choisir</a></div>
+      </div>
+    </div>
+
+    <div class="plans" role="tabpanel" id="p-pro" aria-labelledby="t-pro" hidden>
+      <div class="plan">
+        <div class="speed">Startup<small>Petites structures</small></div>
+        <div><h3>Startup</h3><ul><li>Un poste téléphonique fixe</li><li>Forfait appels de 2 500 FCFA et appels illimités vers un mobile</li></ul></div>
+        <div class="price"><div><strong>24 900 FCFA</strong><span>par mois</span></div><a class="btn btn-ghost" href="#eligibilite" data-offre="Pro Startup" data-usage="entreprise">Choisir</a></div>
+      </div>
+      <div class="plan pick">
+        <div class="speed">Business<small>PME</small></div>
+        <div><h3>Business</h3><ul><li>Forfait appels de 10 000 FCFA, illimité vers les fixes Celtiis et 2 mobiles</li><li>Pocket 4G avec 5 Go en secours si la ligne coupe</li></ul></div>
+        <div class="price"><div><strong>69 900 FCFA</strong><span>par mois</span></div><a class="btn btn-red" href="#eligibilite" data-offre="Pro Business" data-usage="entreprise">Choisir</a></div>
+      </div>
+      <div class="plan">
+        <div class="speed">Business+<small>Équipes plus grandes</small></div>
+        <div><h3>Business+</h3><ul><li>Forfait appels de 15 000 FCFA, illimité vers les fixes Celtiis et 3 mobiles</li><li>Pocket 4G avec 10 Go en secours</li></ul></div>
+        <div class="price"><div><strong>99 900 FCFA</strong><span>par mois</span></div><a class="btn btn-ghost" href="#eligibilite" data-offre="Pro Business+" data-usage="entreprise">Choisir</a></div>
+      </div>
+      <div class="plan">
+        <div class="speed">Sur devis<small>Fibre Pro, Office, lignes dédiées</small></div>
+        <div><h3>Besoins spécifiques</h3><ul><li>Fibre Pro de 25 à 80 Mbps, Office jusqu'à 200 Mbps</li><li>Un commercial passe voir vos locaux avant de chiffrer</li></ul></div>
+        <div class="price"><a class="btn btn-ghost" href="#eligibilite" data-offre="Devis entreprise" data-usage="entreprise">Demander un devis</a></div>
+      </div>
+    </div>
+
+    <div class="plans" role="tabpanel" id="p-4g" aria-labelledby="t-4g" hidden>
+      <div class="plan">
+        <div class="speed">MiFi<small>AfriLink 4G LTE</small></div>
+        <div><h3>Modem de poche</h3><ul><li>SIM et forfait de 3 Go offerts</li><li>Fonctionne avec Celtiis, Moov et MTN</li></ul></div>
+        <div class="price"><div><strong>12 000 FCFA</strong><span>prix unique</span></div><a class="btn btn-ghost" href="#eligibilite" data-offre="MiFi AfriLink" data-usage="routeur">Commander</a></div>
+      </div>
+      <div class="plan">
+        <div class="speed">CPE<small>AfriLink 4G LTE</small></div>
+        <div><h3>Routeur CPE 4G pour la maison ou la boutique</h3><ul><li>SIM et forfait de 3 Go offerts</li><li>Fonctionne avec Celtiis, Moov et MTN</li></ul></div>
+        <div class="price"><div><strong>15 000 FCFA</strong><span>prix unique</span></div><a class="btn btn-ghost" href="#eligibilite" data-offre="Routeur CPE AfriLink" data-usage="routeur">Commander</a></div>
+      </div>
+    </div>
+
+    <p class="note">Prix indicatifs, confirmés au moment de la souscription. Les routeurs CPE et les MiFi sont aussi disponibles à notre point de vente d'Étoile rouge.</p>
+  </div>
+</section>
+
+<!-- Étapes -->
+<section class="band-white" id="installation" aria-labelledby="titre-install">
+  <div class="wrap">
+    <span class="eyebrow">Comment ça se passe</span>
+    <h2 id="titre-install">Trois étapes, sans vous déplacer</h2>
+    <p class="intro">Votre conseiller RGZ s'occupe de tout avec Celtiis.</p>
+    <ol class="steps">
+      <li><h3>On vérifie votre adresse</h3><p>Vous remplissez le formulaire ou vous nous appelez. Un conseiller confirme si la fibre passe dans votre rue.</p></li>
+      <li><h3>On monte votre dossier</h3><p>Votre conseiller RGZ enregistre la souscription auprès de Celtiis. Celtiis vous contacte ensuite pour fixer le rendez-vous d'installation.</p></li>
+      <li><h3>Celtiis installe la fibre</h3><p>Le technicien Celtiis intervient en général sous 3 à 5 jours ouvrables. Si le rendez-vous tarde, écrivez-nous et on fait le point avec vous.</p></li>
+    </ol>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" aria-labelledby="titre-faq">
+  <div class="wrap">
+    <span class="eyebrow">Vos questions</span>
+    <h2 id="titre-faq">Questions fréquentes</h2>
+    <div class="faq">
+      <details><summary>Comment savoir si la fibre arrive chez moi ?</summary><p>La couverture se décide rue par rue. Remplissez le formulaire en haut de la page ou appelez le 01 62 00 00 62 : nous vérifions votre adresse et vous répondons en général le jour même en semaine.</p></details>
+      <details><summary>Combien coûte l'installation ?</summary><p>10 000 FCFA, payés une seule fois. Ensuite, vous ne payez que l'abonnement mensuel. Pour les offres Fibre Office Max et Méga, les frais d'accès aux services (FAS) sont de 24 000 FCFA TTC.</p></details>
+      <details><summary>Combien de temps faut-il attendre ?</summary><p>Celtiis réalise l'installation en général sous 3 à 5 jours ouvrables après la souscription, dans les zones déjà raccordées. Ce délai est indicatif.</p></details>
+      <details><summary>Comment payer ?</summary><p>Par Mobile Money MTN, Moov ou Celtiis, ou en espèces à notre bureau de Gbégamey.</p></details>
+      <details><summary>Mon quartier n'est pas encore couvert. Que faire ?</summary><p>Laissez quand même votre demande. Nous la gardons et nous vous prévenons dès que la fibre arrive. En attendant, un routeur CPE ou un MiFi AfriLink peut vous dépanner.</p></details>
+      <details><summary>J'ai une coupure, qui contacter ?</summary><p>Écrivez-nous sur WhatsApp ou appelez le 01 62 00 00 62. Nous vous indiquons la marche à suivre auprès de Celtiis.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- Contact -->
+<section class="band-white" id="contact" aria-labelledby="titre-contact">
+  <div class="wrap">
+    <span class="eyebrow">Contact commercial</span>
+    <h2 id="titre-contact">Parlez à un conseiller</h2>
+    <p class="intro">Lundi au vendredi de 8 h à 18 h, samedi de 9 h à 13 h.</p>
+    <div class="contact-grid">
+      <div>
+        <h3>Service commercial</h3>
+        <a class="c-item" href="tel:+2290162000062"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg></span><span><small>Téléphone</small>01 62 00 00 62</span></a>
+        <a class="c-item" href="mailto:rgz@rgz.bj"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></svg></span><span><small>E-mail</small>rgz@rgz.bj</span></a>
+      </div>
+      <div>
+        <h3>Assistance clients</h3>
+        <a class="c-item" href="https://wa.me/2290162000062" target="_blank" rel="noopener"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 21l1.7-4.6A9 9 0 1 1 8 19.6L3 21z"/><path d="M9 9.5c0 3 2.5 5.5 5.5 5.5l1-1.5-2-1-1 .8a4 4 0 0 1-2-2l.8-1-1-2L9 9.5z"/></svg></span><span><small>WhatsApp</small>Écrire sur WhatsApp</span></a>
+        <div class="c-item"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></span><span><small>Horaires</small>Lun-ven 8 h-18 h, sam 9 h-13 h</span></div>
+      </div>
+      <div>
+        <h3>Bureau</h3>
+        <div class="c-item"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg></span><span><small>Adresse</small>N°937 Gbégamey, 4 Étoile rouge<br>03 BP 4154 Jéricho, Cotonou</span></div>
+        <div class="c-item"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></span><span><small>Visite</small>Sur rendez-vous</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <h3>RGZ SARL</h3>
+        <p>Partenaire et distributeur officiel Celtiis au Bénin : fibre Maison et Entreprise, routeurs CPE 4G et MiFi AfriLink, pour particuliers et professionnels.</p>
+      </div>
+      <div>
+        <h3>L'entreprise</h3>
+        <ul>
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="index.html#apropos">À propos</a></li>
+          <li><a href="index.html#partenaires">Partenaires</a></li>
+          <li><a href="index.html#recrutement">Recrutement</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Nos offres</h3>
+        <ul>
+          <li><a href="#offres-grille" data-open-tab="t-maison">Fibre Maison</a></li>
+          <li><a href="#offres-grille" data-open-tab="t-pro">Fibre Entreprise</a></li>
+          <li><a href="#offres-grille" data-open-tab="t-4g">Routeurs CPE et MiFi 4G</a></li>
+          <li><a href="#eligibilite" data-scroll-form>Tester mon quartier</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© <span id="annee">2026</span> RGZ SARL, distributeur officiel Celtiis. Cotonou, Bénin.</span>
+      <span class="foot-links"><a href="#confidentialite">Confidentialité et données</a><a href="https://web.facebook.com/rgz.connectivity" target="_blank" rel="noopener">Facebook</a></span>
+    </div>
+  </div>
+</footer>
+
+<dialog class="privacy-modal" id="confidentialite" aria-labelledby="titre-conf">
+  <button class="privacy-close" type="button" aria-label="Fermer" data-close-privacy>×</button>
+  <span class="eyebrow">Confidentialité</span>
+  <h2 id="titre-conf">Confidentialité et données</h2>
+  <h3>Les informations collectées</h3>
+  <p>Les informations saisies dans le formulaire (nom, téléphone, commune, quartier, usage) sont transmises à RGZ SARL par WhatsApp. Le site ne les stocke pas.</p>
+  <h3>À quoi elles servent</h3>
+  <p>Elles servent uniquement à vérifier votre éligibilité et à vous recontacter. Nous ne les vendons pas et ne les transmettons qu'à Celtiis, lorsque vous souscrivez.</p>
+  <h3>Vos droits</h3>
+  <p>Pour les faire supprimer, écrivez à <a href="mailto:rgz@rgz.bj">rgz@rgz.bj</a>.</p>
+  <button class="btn btn-blue" type="button" data-close-privacy>J'ai compris</button>
+</dialog>
+
+<a class="btn btn-wa wa" href="https://wa.me/2290162000062?text=Bonjour%20RGZ%2C%20je%20voudrais%20la%20fibre." target="_blank" rel="noopener" aria-label="Nous écrire sur WhatsApp"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.26-.46-2.39-1.47-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.14.3-.35.45-.52.15-.18.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.61-.92-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.07c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.7.63.71.22 1.36.19 1.87.12.57-.09 1.76-.72 2-1.41.25-.7.25-1.29.18-1.41-.08-.13-.28-.2-.57-.35m-5.42 7.4h-.01a9.87 9.87 0 0 1-5.03-1.38l-.36-.21-3.74.98 1-3.65-.24-.37a9.86 9.86 0 0 1-1.51-5.26c0-5.45 4.44-9.88 9.89-9.88 2.64 0 5.12 1.03 6.99 2.9a9.83 9.83 0 0 1 2.89 7c0 5.45-4.44 9.88-9.88 9.88m8.41-18.3A11.82 11.82 0 0 0 12.05 0C5.5 0 .16 5.34.16 11.89c0 2.1.55 4.14 1.59 5.95L.06 24l6.3-1.65a11.88 11.88 0 0 0 5.68 1.45h.01c6.55 0 11.89-5.34 11.89-11.89a11.82 11.82 0 0 0-3.48-8.42z"/></svg></a>
+
+<script>
+(function(){
+  var WA = "2290162000062";   // numéro d'assistance officiel (WhatsApp)
+  document.getElementById("annee").textContent = new Date().getFullYear();
+
+  // Menu mobile
+  var menuBtn = document.querySelector(".menu-btn"), nav = document.getElementById("nav");
+  function setMenu(open){ nav.classList.toggle("open", open); document.body.classList.toggle("menu-open", open); menuBtn.classList.toggle("open", open); menuBtn.setAttribute("aria-expanded", String(open)); menuBtn.setAttribute("aria-label", open ? "Fermer le menu" : "Ouvrir le menu"); }
+  menuBtn.addEventListener("click", function(){ setMenu(!nav.classList.contains("open")); });
+  nav.querySelectorAll("a").forEach(function(a){ a.addEventListener("click", function(){ setMenu(false); }); });
+  document.addEventListener("keydown", function(e){ if(e.key === "Escape") setMenu(false); });
+  document.querySelector(".nav-backdrop").addEventListener("click", function(){ setMenu(false); });
+
+  // Onglets des offres (clic + flèches du clavier)
+  var tabs = Array.prototype.slice.call(document.querySelectorAll(".tab"));
+  function selectTab(t, focus){
+    tabs.forEach(function(o){
+      var on = o === t;
+      o.setAttribute("aria-selected", String(on));
+      o.tabIndex = on ? 0 : -1;
+      document.getElementById(o.getAttribute("aria-controls")).hidden = !on;
+    });
+    if (focus) t.focus();
+  }
+  tabs.forEach(function(t, i){
+    t.addEventListener("click", function(){ selectTab(t, false); });
+    t.addEventListener("keydown", function(e){
+      var n = null;
+      if (e.key === "ArrowRight") n = tabs[(i + 1) % tabs.length];
+      else if (e.key === "ArrowLeft") n = tabs[(i - 1 + tabs.length) % tabs.length];
+      if (n){ e.preventDefault(); selectTab(n, true); }
+    });
+  });
+  document.querySelectorAll("[data-open-tab]").forEach(function(a){
+    a.addEventListener("click", function(){ selectTab(document.getElementById(a.getAttribute("data-open-tab")), false); });
+  });
+
+  // Lien actif dans le menu selon la section affichée
+  var navLinks = nav.querySelectorAll('a[href^="#"]:not(.btn)');
+  function highlight(){
+    var current = "";
+    document.querySelectorAll("main section[id]").forEach(function(s){
+      if (window.scrollY >= s.offsetTop - 120) current = s.id;
+    });
+    navLinks.forEach(function(l){ l.classList.toggle("active", l.getAttribute("href") === "#" + current); });
+  }
+  window.addEventListener("scroll", highlight, {passive:true});
+  highlight();
+
+  // Liens « Tester mon quartier » : focus sur le premier champ
+  var form = document.getElementById("eligibilite");
+  document.querySelectorAll("[data-scroll-form]").forEach(function(a){
+    a.addEventListener("click", function(){
+      setTimeout(function(){ document.getElementById("nom").focus({preventScroll:true}); }, 600);
+    });
+  });
+
+  // Boutons « Choisir » / « Commander » : préremplissent le formulaire
+  var USAGE = {maison:"Fibre pour la maison", entreprise:"Fibre pour mon entreprise", routeur:"Routeur CPE ou MiFi 4G"};
+  var besoin = document.getElementById("besoin");
+  var chosen = document.getElementById("chosen"), chosenName = document.getElementById("chosenName");
+  var offre = "";
+  function setOffer(name){
+    offre = name || "";
+    chosenName.textContent = offre;
+    chosen.style.display = offre ? "flex" : "none";
+  }
+  document.getElementById("chosenClear").addEventListener("click", function(){ setOffer(""); });
+  document.querySelectorAll("[data-offre]").forEach(function(a){
+    a.addEventListener("click", function(){
+      besoin.value = a.getAttribute("data-usage") || "maison";
+      setOffer(a.getAttribute("data-offre"));
+      form.classList.remove("flash"); void form.offsetWidth; form.classList.add("flash");
+      setTimeout(function(){ document.getElementById("nom").focus({preventScroll:true}); }, 600);
+    });
+  });
+  // Si l'usage change à la main, on retire l'offre devenue incompatible
+  besoin.addEventListener("change", function(){
+    if (!offre) return;
+    var ok = false;
+    document.querySelectorAll("[data-offre]").forEach(function(b){
+      if (b.getAttribute("data-offre") === offre && b.getAttribute("data-usage") === besoin.value) ok = true;
+    });
+    if (!ok) setOffer("");
+  });
+
+  // Formulaire d'éligibilité -> message WhatsApp
+  function setErr(id, msg){
+    document.getElementById("err-" + id).textContent = msg;
+    document.getElementById(id).setAttribute("aria-invalid", msg ? "true" : "false");
+  }
+  form.addEventListener("submit", function(e){
+    e.preventDefault();
+    var nom = form.nom.value.trim();
+    var tel = form.tel.value.trim();
+    var quartier = form.quartier.value.trim();
+    var ok = true;
+    setErr("nom", nom ? "" : "Indiquez votre nom.");
+    if (!nom) ok = false;
+    if (tel.replace(/\D/g, "").length < 8){ setErr("tel", "Le numéro semble incomplet. Il compte 10 chiffres, par exemple 01 62 00 00 62."); ok = false; } else setErr("tel", "");
+    setErr("quartier", quartier ? "" : "Indiquez votre quartier pour qu'on vérifie la couverture.");
+    if (!quartier) ok = false;
+    if (!ok){ form.querySelector('[aria-invalid="true"]').focus(); return; }
+
+    var lines = [
+      "Bonjour RGZ, je voudrais savoir si mon adresse est raccordable.",
+      "",
+      "*Nom :* " + nom,
+      "*Téléphone :* " + tel,
+      "*Commune :* " + form.commune.value,
+      "*Quartier :* " + quartier,
+      "*Usage :* " + (USAGE[besoin.value] || besoin.value)
+    ];
+    if (offre) lines.push("*Offre qui m'intéresse :* " + offre);
+    var url = "https://wa.me/" + WA + "?text=" + encodeURIComponent(lines.join("\n"));
+    var w = window.open(url, "_blank");
+    if (!w) window.location.href = url;   // si le navigateur bloque la fenêtre
+    document.getElementById("done").style.display = "block";
+  });
+
+  // Fenêtre « Confidentialité et données »
+  var privacy = document.getElementById("confidentialite");
+  function openPrivacy(e){
+    e.preventDefault();
+    if (privacy.showModal) privacy.showModal(); else privacy.setAttribute("open", "");
+  }
+  document.querySelectorAll('a[href="#confidentialite"]').forEach(function(a){ a.addEventListener("click", openPrivacy); });
+  document.querySelectorAll("[data-close-privacy]").forEach(function(b){ b.addEventListener("click", function(){ privacy.close ? privacy.close() : privacy.removeAttribute("open"); }); });
+  privacy.addEventListener("click", function(e){ if (e.target === privacy) privacy.close(); });   // clic en dehors
+})();
+</script>
+<script src="rgz.js" defer></script>
+</body>
+</html>
